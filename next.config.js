@@ -12,6 +12,10 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    reactRoot: true,
+    suppressHydrationWarning: true,
+  },
 };
 
 module.exports = nextConfig;

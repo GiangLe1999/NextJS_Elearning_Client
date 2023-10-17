@@ -362,8 +362,8 @@ html {
 }
 
 /* Accordion */
-
-.css-9xkge5-MuiButtonBase-root-MuiAccordionSummary-root {
+.css-9xkge5-MuiButtonBase-root-MuiAccordionSummary-root,
+.css-1mxs4hs {
   @apply !bg-[#fbfafa] dark:!bg-slate-800 dark:!text-dark_text;
 }
 
@@ -371,11 +371,13 @@ html {
   @apply dark:!fill-white;
 }
 
-.css-ta84vm-MuiAccordionDetails-root {
+.css-ta84vm-MuiAccordionDetails-root,
+.css-1fpbxjw {
   @apply dark:!bg-slate-600 dark:!text-dark_text !border-b;
 }
 
-.css-1fjvggn-MuiPaper-root-MuiAccordion-root {
+.css-1fjvggn-MuiPaper-root-MuiAccordion-root,
+.css-1mxs4hs {
   @apply !border dark:!border-slate-600;
 }
 
@@ -403,11 +405,13 @@ html {
 
 /* Lecture list accordion */
 .lecture-list-accordion
-  .css-1pvvkxv-MuiButtonBase-root-MuiAccordionSummary-root {
+  .css-1pvvkxv-MuiButtonBase-root-MuiAccordionSummary-root,
+.lecture-list-accordion .css-1uaukoe {
   @apply bg-[#f7f9fa] dark:!bg-slate-800 dark:!text-dark_text;
 }
 
-.lecture-list-accordion .css-15v22id-MuiAccordionDetails-root {
+.lecture-list-accordion .css-15v22id-MuiAccordionDetails-root,
+.lecture-list-accordion .css-u7qq7e {
   @apply dark:!text-dark_text !border-b !p-0;
 }
 

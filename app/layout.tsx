@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <StoreProvider>
       <UserSessionProvider>
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning={true}>
           <body
             className={`${josefin.className} bg-white dark-bg bg-no-repeat bg-cover transition h-full`}
           >
