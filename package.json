@@ -21,6 +21,7 @@
     "@types/timeago": "^1.6.1",
     "axios": "^1.5.1",
     "javascript-time-ago": "^2.5.9",
+    "mongoose": "^7.6.3",
     "next": "latest",
     "next-auth": "^4.23.2",
     "next-themes": "^0.2.1",
