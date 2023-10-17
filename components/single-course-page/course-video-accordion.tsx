@@ -6,9 +6,9 @@ import {
   AccordionSummary,
   AccordionWrapper,
 } from "../accordion-materials";
-import { ICourseData } from "../../../server/models/course.model";
 import { formatVideoLength } from "@/lib/format-data";
 import { MdOutlineOndemandVideo } from "react-icons/md";
+import { ICourseData } from "@/types";
 
 interface IVideosBySection {
   section: string;

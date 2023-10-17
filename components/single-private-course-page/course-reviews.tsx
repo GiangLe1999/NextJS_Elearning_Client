@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from "react";
-import { IReview } from "../../../server/models/course.model";
 import { getCourseReviews } from "@/lib/fetch-data";
 import useUserInfo from "@/hooks/useUserInfo";
 import AverageRating from "./average-rating";
@@ -8,6 +7,7 @@ import BtnWithIcon from "../btn-with-icon";
 import { FaPlus } from "react-icons/fa";
 import AddReviewModal from "./add-review-modal";
 import Comment from "../comment";
+import { IReview } from "@/types";
 
 interface Props {
   courseId: string;

@@ -7,11 +7,7 @@ import StyledRating from "./styled-rating";
 
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
-import {
-  IReply,
-  IReview,
-  IReviewReply,
-} from "../../server/models/course.model";
+
 import FormInput from "./form-input";
 import BtnWithLoading from "./btn-with-loading";
 import { addAnswer, addReviewReply } from "@/lib/mutation-data";
@@ -20,6 +16,7 @@ import BtnWithIcon from "./btn-with-icon";
 import useIsAdmin from "@/hooks/useIsAdmin";
 import CommentReply from "./comment-reply";
 import useUserInfo from "@/hooks/useUserInfo";
+import { IReply, IReview, IReviewReply } from "@/types";
 
 TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo("en-US");
@@ -65,7 +62,6 @@ const Comment: FC<Props> = ({
   const [openReplies, setOpenReplies] = useState(false);
   const [answer, setAnswer] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const user = useUserInfo();
 
   const submitReplyHandler = async () => {
     try {

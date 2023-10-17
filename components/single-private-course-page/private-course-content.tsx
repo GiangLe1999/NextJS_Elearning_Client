@@ -4,7 +4,7 @@ import { FC, useState } from "react";
 import LoadingSpinner from "../loading-spinner";
 import Heading from "../heading";
 import CourseContentMedia from "./course-content-media";
-import { ICourseData } from "../../../server/models/course.model";
+import { ICourseData } from "@/types";
 
 interface Props {
   id: string;

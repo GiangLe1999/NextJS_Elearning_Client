@@ -1,4 +1,4 @@
-import { IReview } from "../../server/models/course.model";
+import { IReview } from "@/types";
 
 export const calculatePercentage = (
   reviewsArr: IReview[],

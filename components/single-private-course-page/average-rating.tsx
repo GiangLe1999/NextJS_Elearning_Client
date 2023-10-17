@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { IReview } from "../../../server/models/course.model";
 import StyledRating from "../styled-rating";
 import { calculatePercentage } from "@/lib/calculate";
+import { IReview } from "@/types";
 
 interface Props {
   reviews: IReview[];

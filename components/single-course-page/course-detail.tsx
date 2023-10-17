@@ -22,7 +22,6 @@ import BtnWithIcon from "../btn-with-icon";
 import { PiStudentBold } from "react-icons/pi";
 import Comment from "@/components/comment";
 import { Box, Modal, Rating } from "@mui/material";
-import { ICourseData, IReview } from "../../../server/models/course.model";
 import CourseContentList from "./course-content-list";
 import { getStripePublishableKey } from "@/lib/fetch-data";
 import { loadStripe } from "@stripe/stripe-js";
@@ -32,6 +31,7 @@ import CheckOutForm from "./check-out-form";
 import { FaInfoCircle } from "react-icons/fa";
 import Link from "next/link";
 import NoContentYet from "../no-content-yet";
+import { ICourseData, IReview } from "@/types";
 
 interface Props {
   courseDetail: IFetchedCourse;

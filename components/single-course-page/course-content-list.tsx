@@ -1,6 +1,6 @@
-import { FC, useState } from "react";
-import { ICourseData } from "../../../server/models/course.model";
+import { FC } from "react";
 import CourseVideosAccordion from "./course-video-accordion";
+import { ICourseData } from "@/types";
 
 interface Props {
   list: ICourseData[];

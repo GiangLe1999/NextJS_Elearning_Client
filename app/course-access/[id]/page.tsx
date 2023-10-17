@@ -9,7 +9,7 @@ import { useGetCourseContentQuery } from "@/store/course/course-api";
 import { NextPage } from "next";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
-import { ICourseData } from "../../../../server/models/course.model";
+import { ICourseData } from "../../../types";
 
 interface Props {
   params: { id: string };

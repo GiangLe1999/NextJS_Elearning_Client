@@ -1,5 +1,4 @@
 import { FC, useState } from "react";
-import { IQuestion } from "../../../server/models/course.model";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,6 +9,7 @@ import toast from "react-hot-toast";
 import Comment from "../comment";
 
 import useUserInfo from "@/hooks/useUserInfo";
+import { IQuestion } from "@/types";
 
 interface Props {
   questions?: IQuestion[];

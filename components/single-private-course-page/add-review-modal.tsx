@@ -4,7 +4,7 @@ import FormInput from "../form-input";
 import BtnWithLoading from "../btn-with-loading";
 import toast from "react-hot-toast";
 import { createReview } from "@/lib/mutation-data";
-import { IReview } from "../../../server/models/course.model";
+import { IReview } from "@/types";
 
 interface Props {
   openModal: boolean;

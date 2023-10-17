@@ -1,10 +1,10 @@
 "use client";
 
 import { FC, useState } from "react";
-import { ILink, IQuestion } from "../../../server/models/course.model";
 import { HiExternalLink } from "react-icons/hi";
 import QuestionAndAnswer from "./question-and-answer";
 import CourseReviews from "./course-reviews";
+import { ILink, IQuestion } from "@/types";
 
 interface Props {
   resources?: ILink[];

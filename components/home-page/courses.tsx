@@ -1,8 +1,8 @@
 import { getAllCoursesData } from "@/lib/fetch-data";
 import { FC } from "react";
-import { ICourse } from "../../../server/models/course.model";
 import CourseCard from "../course-card";
 import { Types } from "mongoose";
+import { ICourse } from "@/types";
 
 interface Props {}
 

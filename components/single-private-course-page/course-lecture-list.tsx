@@ -1,11 +1,11 @@
 import { Dispatch, FC, SetStateAction } from "react";
-import { ICourseData } from "../../../server/models/course.model";
 import { AccordionWrapper } from "../accordion-materials";
 import { AccordionDetails, AccordionSummary } from "@mui/material";
 import { formatVideoLength } from "@/lib/format-data";
 import { MdOutlineOndemandVideo } from "react-icons/md";
 import { BiSolidChevronDown } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
+import { ICourseData } from "@/types";
 
 interface Props {
   courseData: ICourseData[];

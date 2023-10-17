@@ -1,10 +1,10 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import CoursePlayer from "../course-player";
-import { ICourseData } from "../../../server/models/course.model";
 import CourseLectureList from "./course-lecture-list";
 import CourseLectureNavigator from "./course-lecture-navigator";
 import { BiSolidArrowToLeft } from "react-icons/bi";
 import LectureTabContent from "./lecture-tab-content";
+import { ICourseData } from "@/types";
 
 interface Props {
   courseId: string;
