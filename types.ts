@@ -1,5 +1,6 @@
 import { Types } from "mongoose";
 
+// User Types
 export interface IUser {
   _id: Types.ObjectId;
   name: string;
@@ -17,6 +18,7 @@ export interface IUser {
   SignRefreshToken: () => string;
 }
 
+// Course Types
 export interface IReply {
   _id: Types.ObjectId;
   user: IUser;
