@@ -389,6 +389,10 @@ html {
   @apply !font-josefin;
 }
 
+.css-1fx8m19 {
+  @apply text-tertiary dark:text-dark_text;
+}
+
 /* Reviews Swiper */
 .reviews-swiper .swiper-pagination-bullet {
   @apply main-gradient cursor-pointer;
