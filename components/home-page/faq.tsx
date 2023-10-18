@@ -19,36 +19,38 @@ export default function FAQ({ faqs }: Props) {
       setExpanded(newExpanded ? panel : false);
     };
   return (
-    <section className="container my-14">
-      <h2 className="section-title">
-        <p>
-          Learning With E-Leaning:
-          <span className="text-gradient font-bold">
-            {" "}
-            Frequently Asked Questions
-          </span>
-        </p>
-      </h2>
-      <div className="shadow-md">
-        {faqs.map((faq, index) => (
-          <AccordionWrapper
-            key={faq._id.toString()}
-            expanded={expanded === `panel${index}`}
-            onChange={handleChange(`panel${index}`)}
-          >
-            <AccordionSummary
-              aria-controls={`panel${{ index }}d-content`}
-              id={`panel${{ index }}d-header`}
+    <section className="my-14">
+      <div className="container ">
+        <h2 className="section-title">
+          <p>
+            Learning With E-Leaning:
+            <span className="text-gradient font-bold">
+              {" "}
+              Frequently Asked Questions
+            </span>
+          </p>
+        </h2>
+        <div className="shadow-md">
+          {faqs.map((faq, index) => (
+            <AccordionWrapper
+              key={faq._id.toString()}
+              expanded={expanded === `panel${index}`}
+              onChange={handleChange(`panel${index}`)}
             >
-              <div className="relative w-full">
-                <p>{faq.question}</p>
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <p>{faq.answer}</p>
-            </AccordionDetails>
-          </AccordionWrapper>
-        ))}
+              <AccordionSummary
+                aria-controls={`panel${{ index }}d-content`}
+                id={`panel${{ index }}d-header`}
+              >
+                <div className="relative w-full">
+                  <p>{faq.question}</p>
+                </div>
+              </AccordionSummary>
+              <AccordionDetails>
+                <p>{faq.answer}</p>
+              </AccordionDetails>
+            </AccordionWrapper>
+          ))}
+        </div>
       </div>
     </section>
   );

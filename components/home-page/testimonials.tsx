@@ -24,7 +24,7 @@ const Testimonials: FC<Props> = (props): JSX.Element => {
   }, []);
 
   return (
-    <section className="my-14 container">
+    <section className="my-14 container max-[1000px]:hidden">
       <h3 className="section-title">
         <span className="text-gradient font-bold">Transform Your Life</span>{" "}
         Through Online Education

@@ -1,19 +1,18 @@
 "use client";
-
-import { FC, useState } from "react";
+import { useMediaQuery } from "@mui/material";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import { HiExternalLink } from "react-icons/hi";
 import QuestionAndAnswer from "./question-and-answer";
 import CourseReviews from "./course-reviews";
-import { ILink, IQuestion } from "@/types";
+import { ICourseData, ILink, IQuestion } from "@/types";
+import CourseLectureList from "./course-lecture-list";
 
 interface Props {
-  resources?: ILink[];
-  description?: string;
-  questions?: IQuestion[];
+  courseData: ICourseData[];
   courseId: string;
-  contentId: string;
   refetch: any;
-  activeTitle: string;
+  activeVideo: number;
+  setActiveVideo: Dispatch<SetStateAction<number>>;
 }
 
 const panelItemClasses =
@@ -23,19 +22,35 @@ const activePanelItemClasses =
   "border-b-[2px] border-secondary text-gradient !font-bold";
 
 const LectureTabContent: FC<Props> = ({
-  description,
-  resources,
-  questions,
   courseId,
-  contentId,
   refetch,
-  activeTitle,
+  courseData,
+  activeVideo,
+  setActiveVideo,
 }): JSX.Element => {
   const [active, setActive] = useState(0);
+  const notComputer = useMediaQuery("(max-width:1100px)");
+
+  const description = courseData?.[activeVideo]?.description;
+  const resources = courseData?.[activeVideo]?.links;
+  const questions = courseData?.[activeVideo]?.questions;
+  const contentId = courseData?.[activeVideo]?._id.toString();
+  const activeTitle = courseData?.[activeVideo]?.title;
 
   return (
     <>
-      <div className="bg-[#fbfafa] dark:bg-slate-800 grid grid-cols-4 custom-shadow w-full">
+      <div className="bg-[#fbfafa] dark:bg-slate-800 grid grid-cols-4 max-[1100px]:grid-cols-5 custom-shadow w-full">
+        {notComputer && (
+          <div
+            className={`${panelItemClasses} ${
+              active === -1 && activePanelItemClasses
+            }`}
+            onClick={() => setActive(-1)}
+          >
+            Course Content
+          </div>
+        )}
+
         <div
           className={`${panelItemClasses} ${
             active === 0 && activePanelItemClasses
@@ -72,6 +87,14 @@ const LectureTabContent: FC<Props> = ({
       </div>
 
       <div className="py-6 text-slate-500 dark:text-dark_text">
+        {notComputer && active === -1 && (
+          <CourseLectureList
+            courseData={courseData}
+            activeVideo={activeVideo}
+            setActiveVideo={setActiveVideo}
+          />
+        )}
+
         {active === 0 && <div>{description}</div>}
 
         {active === 1 && (

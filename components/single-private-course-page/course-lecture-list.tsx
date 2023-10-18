@@ -9,8 +9,8 @@ import { ICourseData } from "@/types";
 
 interface Props {
   courseData: ICourseData[];
-  setOpenSidebar: Dispatch<SetStateAction<boolean>>;
-  setIconHover: Dispatch<SetStateAction<boolean>>;
+  setOpenSidebar?: Dispatch<SetStateAction<boolean>>;
+  setIconHover?: Dispatch<SetStateAction<boolean>>;
   activeVideo: number;
   setActiveVideo: Dispatch<SetStateAction<number>>;
 }
@@ -42,14 +42,14 @@ const CourseLectureList: FC<Props> = ({
 
   return (
     <div className="overflow-y-scroll max-h-[calc(100%-62px)] no-scrollbar">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between max-[1100px]:hidden">
         <h2 className="font-bold text-xl p-4 pb-2">Course Content</h2>
         <IoClose
           size={25}
           className="cursor-pointer mr-[13px] mt-1"
           onClick={() => {
-            setOpenSidebar(false);
-            setIconHover(false);
+            setOpenSidebar && setOpenSidebar(false);
+            setIconHover && setIconHover(false);
           }}
         />
       </div>

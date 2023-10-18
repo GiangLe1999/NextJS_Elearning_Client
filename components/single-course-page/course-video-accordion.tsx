@@ -46,7 +46,9 @@ const CourseVideosAccordion: FC<Props> = ({
         </p>
         •
         <p>
-          <span className="text-slate-500">Total length : </span>
+          <span className="text-slate-500 max-[389px]:hidden">
+            Total length :{" "}
+          </span>
           {formatVideoLength(courseLength)}{" "}
         </p>
       </div>
@@ -62,7 +64,7 @@ const CourseVideosAccordion: FC<Props> = ({
               id={`panel${{ index }}d-header`}
             >
               <div className="relative w-full">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between max-[400px]:block">
                   <span className="font-semibold text-[17px]">
                     {section.section}
                   </span>

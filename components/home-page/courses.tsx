@@ -24,7 +24,7 @@ const Courses: FC<Props> = async (props): Promise<JSX.Element> => {
           <p>With Our Courses</p>
         </h2>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="main-grid">
           {courses.map((course) => (
             <CourseCard key={course._id.toString()} course={course} />
           ))}

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { cache } from "react";
 
 export const getBannerLayoutData = async () => {
   try {
@@ -72,7 +73,7 @@ export const getAllFAQs = async () => {
   }
 };
 
-export const getCoursePublicDetails = async (courseId: string) => {
+export const getCoursePublicDetails = cache(async (courseId: string) => {
   try {
     const { data } = await axios(
       `${process.env.NEXT_PUBLIC_SERVER_URL}/get-course/${courseId}`
@@ -82,7 +83,7 @@ export const getCoursePublicDetails = async (courseId: string) => {
   } catch (error) {
     console.log(error);
   }
-};
+});
 
 export const getStripePublishableKey = async () => {
   try {

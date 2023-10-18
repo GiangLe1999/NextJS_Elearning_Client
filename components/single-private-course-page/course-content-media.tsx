@@ -30,7 +30,11 @@ const CourseContentMedia: FC<Props> = ({
 
   return (
     <div className="mt-[62px]">
-      <div className={`${openSidebar ? "w-[75%]" : "w-full"} transition-width`}>
+      <div
+        className={`${
+          openSidebar ? "w-[75%]" : "w-full"
+        } transition-width max-[1100px]:w-full`}
+      >
         <CoursePlayer
           title={courseData?.[activeVideo]?.title}
           videoUrl={courseData?.[activeVideo]?.videoUrl}
@@ -39,7 +43,9 @@ const CourseContentMedia: FC<Props> = ({
 
       <div className="container">
         <div
-          className={`${openSidebar ? "w-[75%]" : "w-full"} transition-width`}
+          className={`${
+            openSidebar ? "w-[75%]" : "w-full"
+          } transition-width max-[1100px]:w-full`}
         >
           <CourseLectureNavigator
             onlyNext={activeVideo === 0}
@@ -63,13 +69,11 @@ const CourseContentMedia: FC<Props> = ({
           </h1>
 
           <LectureTabContent
-            description={courseData?.[activeVideo]?.description}
-            resources={courseData?.[activeVideo]?.links}
-            questions={courseData?.[activeVideo]?.questions}
             courseId={courseId}
-            contentId={courseData?.[activeVideo]?._id.toString()}
             refetch={refetch}
-            activeTitle={courseData?.[activeVideo]?.title}
+            courseData={courseData}
+            activeVideo={activeVideo}
+            setActiveVideo={setActiveVideo}
           />
         </div>
       </div>
@@ -79,7 +83,7 @@ const CourseContentMedia: FC<Props> = ({
           openSidebar
             ? "translate-x-0 opacity-100"
             : "translate-x-full opacity-0"
-        }`}
+        } max-[1100px]:hidden`}
       >
         <CourseLectureList
           courseData={courseData}

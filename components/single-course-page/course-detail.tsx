@@ -100,8 +100,8 @@ const CourseDetail: FC<Props> = ({ courseDetail, courseId }): JSX.Element => {
 
   return (
     <div className="container my-28">
-      <div className="w-full flex gap-16">
-        <div className="w-[60%]">
+      <div className="w-full flex gap-16 max-[845px]:flex-col-reverse">
+        <div className="w-[60%] max-[845px]:w-full">
           <h1 className="text-gradient text-2xl font-bold">
             {courseDetail.name}
           </h1>
@@ -188,7 +188,7 @@ const CourseDetail: FC<Props> = ({ courseDetail, courseId }): JSX.Element => {
           </div>
 
           {formattedReviews.length ? (
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6 max-[722px]:grid-cols-1">
               {formattedReviews.map((review: IReview, index) => (
                 <Comment
                   key={review._id.toString()}
@@ -215,7 +215,11 @@ const CourseDetail: FC<Props> = ({ courseDetail, courseId }): JSX.Element => {
             {isPurchased ? (
               <div>
                 <p className="flex items-center gap-1 text-lg mb-2 font-semibold">
-                  <FaInfoCircle color="#0da5b5" /> You purchased this course on{" "}
+                  <FaInfoCircle
+                    color="#0da5b5"
+                    className="max-[1100px]:hidden"
+                  />{" "}
+                  You purchased this course on{" "}
                   {formatShortDate(isPurchased.createdDate)}
                 </p>
                 <Link

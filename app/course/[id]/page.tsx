@@ -9,6 +9,20 @@ interface Props {
   params: { id: string };
 }
 
+export const generateMetadata = async ({ params }: Props) => {
+  const courseDetail = (await getCoursePublicDetails(
+    params.id
+  )) as IFetchedCourse;
+
+  return {
+    title: `${courseDetail.name} | E-Learning`,
+    description: courseDetail.description,
+    alternates: {
+      canonical: process.env.NEXT_PUBLIC_BASE_URL,
+    },
+  };
+};
+
 const page: NextPage<Props> = async ({ params }) => {
   const courseDetail = (await getCoursePublicDetails(
     params.id

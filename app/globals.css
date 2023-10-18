@@ -20,7 +20,7 @@ html {
 }
 
 .even-section {
-  @apply bg-[#fbfafa] dark:bg-transparent pt-12 pb-16 mt-12;
+  @apply bg-[#f7f9fa] dark:bg-transparent pt-12 pb-16 mt-12;
 }
 
 .custom-shadow {
@@ -42,7 +42,7 @@ html {
 }
 
 .dark-bg {
-  @apply dark:bg-gradient-to-b dark:from-gray-900 dark:to-black;
+  @apply dark:bg-gradient-to-b dark:from-gray-900 dark:to-slate-900;
 }
 
 .block-wrapper {
@@ -56,6 +56,10 @@ html {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.main-grid {
+  @apply grid grid-cols-3 gap-6 max-[879px]:grid-cols-2 max-[590px]:grid-cols-1;
 }
 
 @keyframes changeBackgroundColor {
@@ -363,7 +367,7 @@ html {
 
 /* Accordion */
 .css-9xkge5-MuiButtonBase-root-MuiAccordionSummary-root,
-.css-1mxs4hs {
+.css-5qe2b6 {
   @apply !bg-[#fbfafa] dark:!bg-slate-800 dark:!text-dark_text;
 }
 
@@ -420,16 +424,35 @@ html {
 }
 
 /* Rating */
-.css-1c99szj-MuiRating-icon {
+.css-1c99szj-MuiRating-icon,
+.css-79elbk {
   @apply dark:!text-[#ffffff4d];
 }
 
 .css-1lauo1g-MuiRating-root,
-.css-ryrseu-MuiRating-root {
+.css-ryrseu-MuiRating-root,
+.css-1a2asoj {
   @apply !text-[#b4690e] dark:!text-[#faaf00];
 }
 
 /* Courses Category Page */
 .category-tag {
   @apply rounded-sm px-3 py-2 text-white hover:scale-105 transition;
+}
+
+/* About page */
+.introduce-section-img {
+  @apply relative w-full h-full rounded-md overflow-hidden aspect-square;
+}
+
+.introduce-section {
+  @apply grid grid-cols-2 gap-x-36 gap-y-6 text-tertiary max-[1021px]:grid-cols-1;
+}
+
+.introduce-section p {
+  @apply text-tertiary dark:text-dark_text text-xl mb-2;
+}
+
+.introduce-section h2 {
+  @apply font-bold text-4xl dark:text-white mb-3;
 }

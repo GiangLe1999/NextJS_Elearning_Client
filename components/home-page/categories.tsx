@@ -22,7 +22,7 @@ const Categories: FC<Props> = async (props): Promise<JSX.Element> => {
           <span className="text-gradient font-bold"> Categories</span>
         </h2>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="main-grid">
           {categories.map((category, index) => (
             <CategoryCard
               category={category}

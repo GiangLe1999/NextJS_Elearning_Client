@@ -8,7 +8,7 @@ interface Props {}
 
 const Reviews: FC<Props> = (props): JSX.Element => {
   return (
-    <section className="even-section">
+    <section className="even-section  max-[1000px]:!bg-white max-[1000px]:dark:!bg-transparent">
       <div className="container grid grid-cols-2 gap-10 max-[1000px]:grid-cols-1 pt-6">
         <div className="w-[80%] max-w-[500px] aspect-square relative mx-auto">
           <NextImage

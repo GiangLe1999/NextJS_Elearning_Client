@@ -45,7 +45,7 @@ const page: NextPage<Props> = async ({ params }) => {
 
             <CategoryTag categories={categories} exclude={data.category} />
 
-            <div className="grid grid-cols-3 gap-6 mt-10">
+            <div className="mt-10 main-grid">
               {courses.map((course) => (
                 <CourseCard key={course._id.toString()} course={course} />
               ))}

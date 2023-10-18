@@ -32,7 +32,7 @@ const CourseCard: FC<Props> = ({ course }): JSX.Element => {
         </h3>
         <Link
           href={`/course/${course._id}`}
-          className="flex justify-between my-2"
+          className="flex justify-between my-2 max-[320px]:block"
         >
           <StyledRating
             defaultValue={course.ratings || 0}
@@ -47,7 +47,7 @@ const CourseCard: FC<Props> = ({ course }): JSX.Element => {
           </span>
         </Link>
 
-        <div className="flex justify-between my-2">
+        <div className="flex justify-between my-2 max-[320px]:block">
           <div className="flex items-center">
             <span className="mr-2 font-bold text-2xl text-gradient">
               {course.price === 0 ? "Free" : "$" + course.price + ".00"}
