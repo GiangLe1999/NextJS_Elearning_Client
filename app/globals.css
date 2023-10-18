@@ -424,14 +424,13 @@ html {
 }
 
 /* Rating */
-.css-1c99szj-MuiRating-icon,
-.css-79elbk {
+.css-1c99szj-MuiRating-icon {
   @apply dark:!text-[#ffffff4d];
 }
 
 .css-1lauo1g-MuiRating-root,
 .css-ryrseu-MuiRating-root,
-.css-1a2asoj {
+.css-79elbk {
   @apply !text-[#b4690e] dark:!text-[#faaf00];
 }
 
