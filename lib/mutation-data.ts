@@ -119,3 +119,21 @@ export const addReviewReply = async (
     console.log(error.response.data.message);
   }
 };
+
+export const addNewContact = async (contactData: {
+  email: string;
+  problem: string;
+  explain: string;
+}) => {
+  try {
+    const { data } = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/contact`,
+      contactData
+    );
+
+    return data;
+  } catch (error: any) {
+    toast.error(error.response.data.message);
+    console.log(error.response.data.message);
+  }
+};

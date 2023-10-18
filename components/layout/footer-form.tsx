@@ -1,14 +1,13 @@
 "use client";
 
-import { useLoginMutation } from "@/store/auth/auth-api";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FC, FormEvent, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { ImSpinner } from "react-icons/im";
 import * as Yup from "yup";
 import FormInput from "../form-input";
 import BtnWithLoading from "../btn-with-loading";
+import { addNewContact } from "@/lib/mutation-data";
 
 interface Props {}
 
@@ -17,45 +16,45 @@ const schema = Yup.object({
     .email("Your email is invalid")
     .required("Please enter your email"),
   problem: Yup.string().required("Please enter your problem"),
-  content: Yup.string().required("Please explain about your problem"),
+  explain: Yup.string().required("Please explain about your problem"),
 });
 
 interface FormValues {
   email: string;
   problem: string;
-  content: string;
+  explain: string;
 }
 
 const FooterForm: FC<Props> = (props): JSX.Element => {
-  const [login, { isLoading, isSuccess, error }] = useLoginMutation();
+  const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<FormValues>({
     defaultValues: {
       email: "",
       problem: "",
-      content: "",
+      explain: "",
     },
     resolver: yupResolver(schema),
   });
 
-  const { register, handleSubmit, formState } = form;
+  const { register, handleSubmit, formState, reset } = form;
 
   const { errors } = formState;
 
-  const onSubmit = async (data: FormValues) => {};
-
-  useEffect(() => {
-    if (isSuccess) {
-      toast.success("Login successfully!");
-    }
-
-    if (error) {
-      if ("data" in error) {
-        const errorData = error as any;
-        toast.error(errorData.data.message);
+  const onSubmit = async (data: FormValues) => {
+    try {
+      setIsLoading(true);
+      const res = await addNewContact(data);
+      if (res.success) {
+        toast.success("Sent Message Successfully!");
+        setIsLoading(false);
+        reset();
       }
+    } catch (error: any) {
+      setIsLoading(false);
+      toast.error(error.message);
     }
-  }, [isSuccess, error]);
+  };
 
   return (
     <form
@@ -81,10 +80,10 @@ const FooterForm: FC<Props> = (props): JSX.Element => {
       <FormInput
         textarea
         rows={1}
-        id="content"
+        id="explain"
         label="Explain your problem"
-        register={register("content")}
-        errorMsg={errors.content?.message}
+        register={register("explain")}
+        errorMsg={errors.explain?.message}
       />
 
       <BtnWithLoading
