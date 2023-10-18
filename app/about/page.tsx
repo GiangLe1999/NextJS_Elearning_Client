@@ -11,7 +11,7 @@ const page: NextPage<Props> = () => {
     <>
       <Header />
       <div className="bg-[#f7f9fa] dark:bg-transparent h-screen grid place-items-center">
-        <div className="w-[50%] text-center">
+        <div className="w-[50%] text-center max-[950px]:w-[80%] max-[550px]:mt-24">
           <h2 className="section-title">
             <p className="text-gradient font-bold !text-5xl">Online courses</p>
             <p className="text-3xl mt-3">To achieve your goals</p>
@@ -23,7 +23,7 @@ const page: NextPage<Props> = () => {
             online.
           </p>
 
-          <p className="text-xl text-tertiary dark:text-white">
+          <p className="text-xl text-tertiary dark:text-white max-[500px]:hidden">
             If you’re new to online learning and not sure where to start, you’re
             not alone. We’ve curated a free collection of courses for
             professionals. Take one of these courses and learn new skills (on
