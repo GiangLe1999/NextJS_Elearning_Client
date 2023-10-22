@@ -13,7 +13,7 @@ interface Props {
 }
 
 const common =
-  "flex items-center py-4 pl-4 max-[800px]:pl-[18px] max-[600px]:pl-4 cursor-pointer gap-2 text-[20px] max-[600px]:text-base";
+  "flex items-center py-4 pl-4 max-[960px]:pl-[18px] max-[600px]:pl-4 cursor-pointer gap-2 text-[20px] max-[600px]:text-base";
 
 const ProfileSidebar: FC<Props> = ({ active, setActive }): JSX.Element => {
   const isAdmin = useIsAdmin();
@@ -28,12 +28,10 @@ const ProfileSidebar: FC<Props> = ({ active, setActive }): JSX.Element => {
   };
 
   return (
-    <div className="w-[310px] max-[800px]:w-[60px] max-[600px]:w-[50px] block-wrapper h-fit pb-2 overflow-hidden">
+    <div className="w-[310px] max-[960px]:w-[60px] max-[600px]:w-[50px] block-wrapper h-fit pb-2 overflow-hidden">
       <div
         className={`w-full py-4 flex items-center gap-x-2 px-3 rounded-t-[5px] cursor-pointer ${
-          active === 1
-            ? "bg-slate-600 dark:bg-tertiary text-dark_text"
-            : "bg-transparent"
+          active === 1 ? "main-gradient text-dark_text" : "bg-transparent"
         }`}
         onClick={() => setActive(1)}
       >
@@ -41,34 +39,39 @@ const ProfileSidebar: FC<Props> = ({ active, setActive }): JSX.Element => {
           <LoggedinUserAvatar />
         </div>
 
-        <h1 className="max-[800px]:hidden">My Account</h1>
+        <h1 className="max-[960px]:hidden">My Account</h1>
       </div>
 
       {profileItemsData.map((item, index) => {
-        if (isAdmin && index === 2)
-          return (
-            <Link
-              href="/admin"
-              className={`${common} ${
-                active === 4
-                  ? "bg-slate-600 dark:bg-tertiary text-dark_text"
-                  : "bg-transparent"
-              }`}
-              key={2}
-              onClick={() => {
-                setActive(4);
-              }}
-            >
-              {item.icon({})}
-              <span className="max-[800px]:hidden text-base">{item.title}</span>
-            </Link>
-          );
+        if (index === 2) {
+          if (isAdmin) {
+            return (
+              <Link
+                href="/admin"
+                className={`${common} ${
+                  active === 4
+                    ? "main-gradient text-dark_text"
+                    : "bg-transparent"
+                }`}
+                key={2}
+                onClick={() => {
+                  setActive(4);
+                }}
+              >
+                {item.icon({})}
+                <span className="max-[960px]:hidden text-base">
+                  {item.title}
+                </span>
+              </Link>
+            );
+          } else return null;
+        }
 
         return (
           <div
             className={`${common} ${
               active === index + 2
-                ? "bg-slate-600 dark:bg-tertiary text-dark_text"
+                ? "main-gradient text-dark_text"
                 : "bg-transparent"
             }`}
             key={index}
@@ -77,7 +80,7 @@ const ProfileSidebar: FC<Props> = ({ active, setActive }): JSX.Element => {
             }}
           >
             {item.icon({})}
-            <span className="max-[800px]:hidden text-base">{item.title}</span>
+            <span className="max-[960px]:hidden text-base">{item.title}</span>
           </div>
         );
       })}

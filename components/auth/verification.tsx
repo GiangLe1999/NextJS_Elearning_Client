@@ -56,7 +56,7 @@ const Verification: FC<Props> = ({ setRoute }): JSX.Element => {
     <form onSubmit={verifyHandler}>
       <h3 className="form-title">Verify Your Account</h3>
 
-      <div className="mx-auto mt-2 w-20 h-20 rounded-full text-dark_text bg-tertiary dark:bg-secondary flex items-center justify-center">
+      <div className="mx-auto mt-2 w-20 h-20 rounded-full text-dark_text main-gradient flex items-center justify-center">
         <VscWorkspaceTrusted size={45} />
       </div>
 
@@ -74,12 +74,12 @@ const Verification: FC<Props> = ({ setRoute }): JSX.Element => {
         <BtnWithLoading
           content="Verify OTP"
           isLoading={isLoading}
-          customClasses="my-6 !w-[74%] !mx-auto"
+          customClasses="mt-6 mb-0 !w-[74%] !mx-auto"
           type="submit"
         />
       </div>
 
-      <p className="text-center pt-4 text-slate-700 dark:text-dark_text">
+      <p className="text-center pt-4 text-slate-700 dark:text-dark_text my-3">
         Go back to sign in?
         <span className="form-link" onClick={() => setRoute("login")}>
           Sign in

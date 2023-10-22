@@ -160,7 +160,7 @@ html {
 }
 
 .validate-inputs input {
-  @apply !w-full aspect-square bg-transparent !border-[3px] dark:border-white border-[#fff] rounded-[10px] text-slate-700 dark:text-dark_text text-xl outline-none;
+  @apply !w-full aspect-square bg-transparent !border-[3px] border-secondary dark:border-white rounded-[10px] text-slate-700 dark:text-dark_text text-xl outline-none;
 }
 
 /* Loading page */

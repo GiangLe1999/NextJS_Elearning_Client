@@ -27,7 +27,7 @@ const CourseCard: FC<Props> = ({ course }): JSX.Element => {
       </Link>
 
       <div className="p-4 dark:text-dark_text text-tertiary">
-        <h3 className="font-semibold text-lg text-gradient">
+        <h3 className="font-semibold text-lg text-gradient line-clamp-2">
           <Link href={`/course/${course._id}`}>{course.name}</Link>
         </h3>
         <Link
