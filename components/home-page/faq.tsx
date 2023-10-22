@@ -25,8 +25,7 @@ export default function FAQ({ faqs }: Props) {
           <p>
             Learning With E-Leaning:
             <span className="text-gradient font-bold">
-              {" "}
-              Frequently Asked Questions
+              &nbsp;Frequently Asked Questions
             </span>
           </p>
         </h2>
