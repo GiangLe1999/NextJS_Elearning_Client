@@ -428,7 +428,8 @@ html {
 }
 
 /* Rating */
-.css-1c99szj-MuiRating-icon {
+.css-1c99szj-MuiRating-icon,
+.css-1xh6k8t {
   @apply dark:!text-[#ffffff4d];
 }
 
